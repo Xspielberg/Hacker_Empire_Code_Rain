@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+     <head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+        <!--让所有元素居中-->
+        <style>
+            body{
+                margin: 0;
+                padding: 0;
+            }
+            h1,p{
+                text-align: center;
+            }
+            h2{
+                margin-top: 20px;
+            }
+            p{
+                margin: 20px;
+            }
+            button{
+                margin: 20px;
+            }
+            .container{
+                width: 100vw;
+                height: 100vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .container>*{
+                width: 50%;
+            }
+            .container>*:nth-child(1){
+                background-color: #f00;
+            }
+            .container>*:nth-child(2){
+                background-color: #0f0;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Hello World</h1>
+        <p>This is my first paragraph.</p>
+        <p>This is my second paragraph.</p>
+        <p>This is my third paragraph.</p>
+        <p>Try</p>
+        <button onclick="window.location.href='https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element'">Click Me</button>
+    </body>
+</html>
