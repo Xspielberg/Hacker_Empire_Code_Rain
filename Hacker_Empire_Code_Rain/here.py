@@ -14,7 +14,7 @@ screen.fill(BLACK)
 # 内容
 lib=[chr(i) for i in range(48,48+10)] + [chr(i) for i in range(97,97+26)]   # [0-9 a-z]
 texts = [font.render(l, True, (0, 255, 0)) for l in lib]
-cols = list(range(40))  # 字体15, 窗口600
+cols = list(range(40))
 while True:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
@@ -23,13 +23,7 @@ while True:
     screen.blit(surface, (0, 0))
     for i in range(n:=len(cols)):
         text = random.choice(texts)
-        # 1 随机闪烁
         x,y=random.randint(0,n-1),random.randint(0,n-1)
-        #screen.blit(text,(x*15,cols[y]*15))
-        # 2 线性扫描
-        #screen.blit(text, (i * 15, cols[i] * 15))
-        #cols[i] = (cols[i]+1)%40
-        # 3 代码雨
         screen.blit(text, (i * 15, cols[i] * 15))
         cols[i] = 0 if cols[i] >80 or random.random() > 0.95 else cols[i]+1
     pygame.display.flip()
